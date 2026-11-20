@@ -1,14 +1,30 @@
 # Manual Inventory Templates
-In Business Central, it can be a hassle to maintain Item planning parameters for multiple warehouses because you must use Stock Keeping Units (SKU) for each Item/Variant/Location combination and set them manually. The Inventory Templates app is especially beneficial if you have multiple locations with the same Item planning settings, for example, in service organizations with vans designated as Business Central locations.
 
-This manual describes how to set up and use the Inventory Template app.
+The Inventory Templates app lets you maintain item planning parameters for many Business Central locations at once by setting them up in templates and synchronizing those templates to stockkeeping units (SKUs).
 
 ## Inventory Template Setup
-There is a setup page for the Inventory Templates App:
 
-![Screenshot Inventory Template Setup](../images/inventory-template-setup/screenshot-inventory-template-setup.png)
+You set up the app on the **Inventory Template Setup** page. Search for the page, or open **Manual Setup** and choose it under the **Inventory Templates** category:
 
-There is one setting, the "in-transit location". Transfer routes between locations have this location as in transit location.
-There is also an action present that starts the synchronization of the Inventory Templates to SKU’s. How this works in the section [Synchronizing SKU's](synchronizing-skus.md).
+![Inventory Template Setup](../images/inventory-template-setup/screenshot-inventory-template-setup.png)
+
+### Setup fields
+
+- **In-Transit Location Code:** The in-transit location that the synchronization puts on the transfer routes it creates. Existing transfer routes between the same locations are updated to this location. You can only select a location with **Use As In-Transit** switched on. Fill in this field before you synchronize.
+
+Choose **[Sync. Inventory Templates]** to synchronize all inventory templates to SKUs. See [Synchronizing SKUs](synchronizing-skus.md).
+
+### Activate Product
+
+Before you can use the app in a company, you must activate it there. Open **Assisted Setup** and, in the **Inventory Templates** group, choose **Activate product**. The step stays listed until the app is activated.
+
+### Permissions
+
+Users need the **Inventory Templates** permission set to work with inventory templates, the setup, the synchronization, and the Surplus Overview report. Assign it to the users or user groups that use the app.
+
+### Messages
+
+- **In-Transit Location Code must have a value…:** You started a synchronization while **In-Transit Location Code** is empty. Fill in the field and synchronize again.
+- **Inventory Templates license is not valid or not activated:** You started a synchronization or the Surplus Overview report in a company where the app isn't activated. See [Activate Product](#activate-product).
 
 [:arrow_left:](../README.md) [Back](../README.md)
